@@ -163,13 +163,13 @@ class $modify(MyPauseLayer, PauseLayer) {
             menu_selector(MyPauseLayer::onMyButton)
         );
 
-        myButton->setPosition({35.f, 90.f});
+        //myButton->setPosition({35.f, 90.f});
         myButton->setID("quote-button"_spr);
 
-        CCMenu* menu = CCMenu::create();
-        menu->setPosition({0, 0});
-
+        auto menu = this->getChildByID("left-button-menu");
         menu->addChild(myButton);
+
+	menu->updateLayout();
         this->addChild(menu);
     };
 
